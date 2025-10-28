@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吴水保贴吧 - 框架思维导图</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0066cc;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid #0066cc;
+        }
+        h3 {
+            color: #555;
+            margin-top: 30px;
+        }
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .svg-container {
+            margin: 30px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fafafa;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        svg {
+            display: block;
+            margin: 0 auto;
+        }
+        .description {
+            background-color: #f0f9ff;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .footer {
+            text-align: center;
+            color: #666;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>吴水保贴吧单页应用 - 框架思维导图</h1>
+        
+        <div class="description">
+            <p>框架思维导图展示了贴吧单页应用的整体结构，包括页面布局、组件层次和主要功能模块。</p>
+        </div>
+        
+        <div class="svg-container">
+            <svg width="1000" height="700" viewBox="0 0 1000 700">
+                <!-- 中央容器 -->
+                <rect x="400" y="20" width="200" height="60" fill="#0066cc" rx="8"/>
+                <text x="500" y="55" font-size="18" font-weight="bold" fill="white" text-anchor="middle">吴水保贴吧单页应用</text>
+                
+                <!-- 页面视图 -->
+                <rect x="350" y="120" width="300" height="80" fill="#4a90e2" rx="8"/>
+                <text x="500" y="150" font-size="16" font-weight="bold" fill="white" text-anchor="middle">页面视图层</text>
+                <text x="500" y="180" font-size="14" fill="white" text-anchor="middle">(Page Views)</text>
+                
+                <!-- 视图连接线 -->
+                <line x1="500" y1="80" x2="500" y2="120" stroke="#333" stroke-width="2"/>
+                
+                <!-- 首页视图 -->
+                <rect x="100" y="230" width="180" height="50" fill="#50e3c2" rx="5"/>
+                <text x="190" y="260" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">首页视图 (Home View)</text>
+                
+                <!-- 贴吧详情视图 -->
+                <rect x="410" y="230" width="180" height="50" fill="#50e3c2" rx="5"/>
+                <text x="500" y="260" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">贴吧详情视图 (Tieba View)</text>
+                
+                <!-- 帖子详情视图 -->
+                <rect x="720" y="230" width="180" height="50" fill="#50e3c2" rx="5"/>
+                <text x="810" y="260" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">帖子详情视图 (Post Detail View)</text>
+                
+                <!-- 视图连接线 -->
+                <line x1="300" y1="255" x2="410" y2="255" stroke="#333" stroke-width="2"/>
+                <line x1="590" y1="255" x2="720" y2="255" stroke="#333" stroke-width="2"/>
+                
+                <!-- 首页组件 -->
+                <rect x="50" y="320" width="120" height="40" fill="#f5a623" rx="5"/>
+                <text x="110" y="345" font-size="12" fill="white" text-anchor="middle">分类贴吧卡片</text>
+                
+                <rect x="200" y="320" width="120" height="40" fill="#f5a623" rx="5"/>
+                <text x="260" y="345" font-size="12" fill="white" text-anchor="middle">热门帖子列表</text>
+                
+                <rect x="50" y="380" width="120" height="40" fill="#f5a623" rx="5"/>
+                <text x="110" y="405" font-size="12" fill="white" text-anchor="middle">左侧边栏</text>
+                
+                <rect x="200" y="380" width="120" height="40" fill="#f5a623" rx="5"/>
+                <text x="260" y="405" font-size="12" fill="white" text-anchor="middle">右侧边栏</text>
+                
+                <!-- 贴吧详情组件 -->
+                <rect x="360" y="320" width="120" height="40" fill="#f5a623" rx="5"/>
+                <text x="420" y="345" font-size="12" fill="white" text-anchor="middle">贴吧信息区</text>
+                
+                <rect x="510" y="320" width="120" height="40" fill="#f5a623" rx="5"/>
+                <text x="570" y="345" font-size="12" fill="white" text-anchor="middle">操作按钮栏</text>
+                
+                <rect x="360" y="380" width="270" height="40" fill="#f5a623" rx="5"/>
+                <text x="500" y="405" font-size="12" fill="white" text-anchor="middle">本吧帖子列表</text>
+                
+                <!-- 帖子详情组件 -->
+                <rect x="670" y="320" width="120" height="40" fill="#f5a623" rx="5"/>
+                <text x="730" y="345" font-size="12" fill="white" text-anchor="middle">帖子内容区</text>
+                
+                <rect x="670" y="380" width="120" height="40" fill="#f5a623" rx="5"/>
+                <text x="730" y="405" font-size="12" fill="white" text-anchor="middle">作者信息</text>
+                
+                <rect x="820" y="320" width="120" height="40" fill="#f5a623" rx="5"/>
+                <text x="880" y="345" font-size="12" fill="white" text-anchor="middle">操作栏</text>
+                
+                <rect x="820" y="380" width="120" height="40" fill="#f5a623" rx="5"/>
+                <text x="880" y="405" font-size="12" fill="white" text-anchor="middle">评论区</text>
+                
+                <!-- 组件连接线 -->
+                <line x1="190" y1="280" x2="110" y2="320" stroke="#333" stroke-width="1.5"/>
+                <line x1="190" y1="280" x2="260" y2="320" stroke="#333" stroke-width="1.5"/>
+                <line x1="190" y1="280" x2="110" y2="380" stroke="#333" stroke-width="1.5"/>
+                <line x1="190" y1="280" x2="260" y2="380" stroke="#333" stroke-width="1.5"/>
+                
+                <line x1="500" y1="280" x2="420" y2="320" stroke="#333" stroke-width="1.5"/>
+                <line x1="500" y1="280" x2="570" y2="320" stroke="#333" stroke-width="1.5"/>
+                <line x1="500" y1="280" x2="500" y2="380" stroke="#333" stroke-width="1.5"/>
+                
+                <line x1="810" y1="280" x2="730" y2="320" stroke="#333" stroke-width="1.5"/>
+                <line x1="810" y1="280" x2="880" y2="320" stroke="#333" stroke-width="1.5"/>
+                <line x1="810" y1="280" x2="730" y2="380" stroke="#333" stroke-width="1.5"/>
+                <line x1="810" y1="280" x2="880" y2="380" stroke="#333" stroke-width="1.5"/>
+                
+                <!-- 通用组件 -->
+                <rect x="400" y="460" width="200" height="60" fill="#9013fe" rx="8"/>
+                <text x="500" y="485" font-size="16" font-weight="bold" fill="white" text-anchor="middle">通用组件</text>
+                
+                <rect x="250" y="550" width="140" height="40" fill="#bd10e0" rx="5"/>
+                <text x="320" y="575" font-size="12" fill="white" text-anchor="middle">发帖弹窗</text>
+                
+                <rect x="420" y="550" width="140" height="40" fill="#bd10e0" rx="5"/>
+                <text x="490" y="575" font-size="12" fill="white" text-anchor="middle">顶部导航栏</text>
+                
+                <rect x="590" y="550" width="140" height="40" fill="#bd10e0" rx="5"/>
+                <text x="660" y="575" font-size="12" fill="white" text-anchor="middle">移动端菜单</text>
+                
+                <!-- 通用组件连接线 -->
+                <line x1="500" y1="520" x2="320" y2="550" stroke="#333" stroke-width="1.5"/>
+                <line x1="500" y1="520" x2="490" y2="550" stroke="#333" stroke-width="1.5"/>
+                <line x1="500" y1="520" x2="660" y2="550" stroke="#333" stroke-width="1.5"/>
+                
+                <!-- 数据层 -->
+                <rect x="400" y="630" width="200" height="40" fill="#50e3c2" rx="8"/>
+                <text x="500" y="655" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">数据模型与交互逻辑</text>
+                
+                <!-- 数据层连接线 -->
+                <line x1="500" y1="600" x2="500" y2="630" stroke="#333" stroke-width="2"/>
+            </svg>
+        </div>
+        
+        <h3>框架结构说明</h3>
+        <ul>
+            <li><strong>页面视图层</strong>：包含三个主要视图 - 首页视图、贴吧详情视图和帖子详情视图，通过JavaScript控制它们的显示和隐藏。</li>
+            <li><strong>组件层</strong>：每个视图由多个组件构成，负责展示特定的功能模块。</li>
+            <li><strong>通用组件</strong>：在多个视图中共享使用的组件，如发帖弹窗、顶部导航栏等。</li>
+            <li><strong>数据层</strong>：包含数据模型和交互逻辑，负责处理用户操作和数据更新。</li>
+        </ul>
+        
+        <div class="footer">
+            <p>吴水保贴吧单页应用文档 © 2023</p>
+        </div>
+    </div>
+</body>
+</html>

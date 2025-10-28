@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吴水保贴吧单页应用文档</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #1a73e8;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #1a73e8;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .container {
+            margin-bottom: 40px;
+        }
+        .svg-container {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            overflow-x: auto;
+        }
+        .description {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+        .description h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .description ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .description li {
+            margin-bottom: 8px;
+        }
+        .quick-links {
+            background-color: #e8f0fe;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .quick-links h3 {
+            margin-top: 0;
+            color: #1a73e8;
+        }
+        .quick-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .quick-links li {
+            margin-bottom: 10px;
+        }
+        .quick-links a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .quick-links a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>吴水保贴吧单页应用文档</h1>
+    
+    <div class="quick-links">
+        <h3>快速导航</h3>
+        <ul>
+            <li><a href="#framework">1. 框架思维导图</a></li>
+            <li><a href="#core-features">2. 核心功能图</a></li>
+            <li><a href="#page-features">3. 页面功能图</a></li>
+            <li><a href="#individual-files">单独文件链接</a></li>
+        </ul>
+    </div>
+
+    <div class="container" id="framework">
+        <h2>1. 框架思维导图</h2>
+        <div class="svg-container">
+            <!-- 框架思维导图 SVG -->
+            <svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+                <!-- 应用中央容器 -->
+                <rect x="300" y="50" width="200" height="60" rx="10" fill="#1a73e8" stroke="#0d47a1" stroke-width="2"/>
+                <text x="400" y="85" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">应用中央容器</text>
+                
+                <!-- 连接线 -->
+                <line x1="400" y1="110" x2="400" y2="140" stroke="#333" stroke-width="2"/>
+                
+                <!-- 页面视图层 -->
+                <rect x="300" y="140" width="200" height="50" rx="8" fill="#4285f4" stroke="#1a56db" stroke-width="2"/>
+                <text x="400" y="170" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">页面视图层</text>
+                
+                <!-- 页面视图连接线 -->
+                <line x1="400" y1="190" x2="400" y2="210" stroke="#333" stroke-width="1"/>
+                <line x1="400" y1="210" x2="150" y2="240" stroke="#333" stroke-width="1"/>
+                <line x1="400" y1="210" x2="400" y2="240" stroke="#333" stroke-width="1"/>
+                <line x1="400" y1="210" x2="650" y2="240" stroke="#333" stroke-width="1"/>
+                
+                <!-- 三个视图页面 -->
+                <rect x="100" y="240" width="100" height="60" rx="5" fill="#673ab7" stroke="#4527a0" stroke-width="2"/>
+                <text x="150" y="265" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">首页视图</text>
+                <text x="150" y="285" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">HomeView</text>
+                
+                <rect x="350" y="240" width="100" height="60" rx="5" fill="#673ab7" stroke="#4527a0" stroke-width="2"/>
+                <text x="400" y="265" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">贴吧详情视图</text>
+                <text x="400" y="285" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">ForumView</text>
+                
+                <rect x="600" y="240" width="100" height="60" rx="5" fill="#673ab7" stroke="#4527a0" stroke-width="2"/>
+                <text x="650" y="265" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">帖子详情视图</text>
+                <text x="650" y="285" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">PostView</text>
+                
+                <!-- 组件层连接线 -->
+                <line x1="150" y1="300" x2="150" y2="320" stroke="#333" stroke-width="1"/>
+                <line x1="400" y1="300" x2="400" y2="320" stroke="#333" stroke-width="1"/>
+                <line x1="650" y1="300" x2="650" y2="320" stroke="#333" stroke-width="1"/>
+                
+                <!-- 组件 -->
+                <rect x="100" y="320" width="100" height="40" rx="5" fill="#ff9800" stroke="#e65100" stroke-width="1.5"/>
+                <text x="150" y="345" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">首页组件</text>
+                
+                <rect x="350" y="320" width="100" height="40" rx="5" fill="#ff9800" stroke="#e65100" stroke-width="1.5"/>
+                <text x="400" y="345" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">贴吧组件</text>
+                
+                <rect x="600" y="320" width="100" height="40" rx="5" fill="#ff9800" stroke="#e65100" stroke-width="1.5"/>
+                <text x="650" y="345" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">帖子组件</text>
+                
+                <!-- 通用组件连接线 -->
+                <line x1="150" y1="360" x2="400" y2="380" stroke="#333" stroke-width="1"/>
+                <line x1="400" y1="360" x2="400" y2="380" stroke="#333" stroke-width="1"/>
+                <line x1="650" y1="360" x2="400" y2="380" stroke="#333" stroke-width="1"/>
+                
+                <!-- 通用组件 -->
+                <rect x="300" y="380" width="200" height="40" rx="5" fill="#4caf50" stroke="#2e7d32" stroke-width="1.5"/>
+                <text x="400" y="405" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">通用组件</text>
+                
+                <!-- 数据层连接线 -->
+                <line x1="400" y1="420" x2="400" y2="450" stroke="#333" stroke-width="2"/>
+                
+                <!-- 数据层 -->
+                <rect x="300" y="450" width="200" height="40" rx="8" fill="#f44336" stroke="#c62828" stroke-width="2"/>
+                <text x="400" y="475" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">数据层</text>
+            </svg>
+        </div>
+        
+        <div class="description">
+            <h3>框架结构说明</h3>
+            <ul>
+                <li><strong>页面视图层</strong>：包含首页视图、贴吧详情视图和帖子详情视图，负责页面整体布局和导航。</li>
+                <li><strong>组件层</strong>：各个视图对应的组件集合，实现具体的页面功能模块。</li>
+                <li><strong>通用组件</strong>：被多个视图共享的组件，如导航栏、页脚、登录框等。</li>
+                <li><strong>数据层</strong>：负责数据的获取、存储和管理，为上层提供数据支持。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="core-features">
+        <h2>2. 核心功能图</h2>
+        <div class="svg-container">
+            <!-- 核心功能图 SVG -->
+            <svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+                <!-- 标题 -->
+                <text x="400" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">百度贴吧核心功能模块</text>
+                
+                <!-- 三大功能模块 -->
+                <rect x="100" y="80" width="200" height="100" rx="10" fill="#1a73e8" stroke="#0d47a1" stroke-width="2"/>
+                <text x="200" y="120" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">贴吧浏览</text>
+                <text x="200" y="145" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">帖子列表展示</text>
+                <text x="200" y="165" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">分类筛选搜索</text>
+                
+                <rect x="350" y="80" width="200" height="100" rx="10" fill="#ea4335" stroke="#c62828" stroke-width="2"/>
+                <text x="450" y="120" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">帖子管理</text>
+                <text x="450" y="145" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">发帖回帖编辑</text>
+                <text x="450" y="165" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">内容审核管理</text>
+                
+                <rect x="600" y="80" width="200" height="100" rx="10" fill="#fbbc05" stroke="#f57c00" stroke-width="2"/>
+                <text x="700" y="120" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">社区互动</text>
+                <text x="700" y="145" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">点赞评论关注</text>
+                <text x="700" y="165" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">私信通知系统</text>
+                
+                <!-- 数据流向 -->
+                <line x1="200" y1="180" x2="200" y2="220" stroke="#333" stroke-width="2"/>
+                <line x1="450" y1="180" x2="450" y2="220" stroke="#333" stroke-width="2"/>
+                <line x1="700" y1="180" x2="700" y2="220" stroke="#333" stroke-width="2"/>
+                
+                <!-- 数据层 -->
+                <rect x="200" y="220" width="500" height="80" rx="10" fill="#34a853" stroke="#1b5e20" stroke-width="2"/>
+                <text x="450" y="250" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">数据处理与存储</text>
+                <text x="450" y="275" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">API调用 · 数据缓存 · 持久化存储</text>
+                
+                <!-- 技术实现 -->
+                <line x1="450" y1="300" x2="450" y2="330" stroke="#333" stroke-width="2"/>
+                
+                <rect x="150" y="330" width="600" height="80" rx="10" fill="#673ab7" stroke="#4527a0" stroke-width="2"/>
+                <text x="450" y="360" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">功能实现技术</text>
+                <text x="450" y="385" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">前端框架 · 响应式设计 · 实时数据同步 · 用户认证授权</text>
+                
+                <!-- 箭头指示 -->
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+                    </marker>
+                </defs>
+                
+                <!-- 功能间关联 -->
+                <line x1="300" y1="130" x2="350" y2="130" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                <line x1="550" y1="130" x2="600" y2="130" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                <line x1="700" y1="150" x2="550" y2="150" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                <line x1="450" y1="150" x2="300" y2="150" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+            </svg>
+        </div>
+        
+        <div class="description">
+            <h3>核心功能说明</h3>
+            <ul>
+                <li><strong>贴吧浏览</strong>：提供帖子列表展示、分类筛选和搜索功能，帮助用户快速找到感兴趣的内容。</li>
+                <li><strong>帖子管理</strong>：支持用户发布、回复和编辑帖子，同时提供内容审核管理功能维护社区秩序。</li>
+                <li><strong>社区互动</strong>：包括点赞、评论、关注等社交功能，以及私信和通知系统增强用户互动。</li>
+                <li><strong>数据处理</strong>：负责API调用、数据缓存和持久化存储，确保数据的高效访问和安全性。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="page-features">
+        <h2>3. 页面功能图</h2>
+        <div class="svg-container">
+            <!-- 页面功能图 SVG -->
+            <svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+                <!-- 页面标题 -->
+                <text x="400" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">页面功能流程</text>
+                
+                <!-- 首页 -->
+                <rect x="100" y="80" width="180" height="100" rx="8" fill="#1a73e8" stroke="#0d47a1" stroke-width="2"/>
+                <text x="190" y="110" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">首页</text>
+                <text x="190" y="135" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">热门贴吧展示</text>
+                <text x="190" y="155" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">搜索入口</text>
+                <text x="190" y="175" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">个人中心入口</text>
+                
+                <!-- 贴吧详情页 -->
+                <rect x="350" y="80" width="180" height="100" rx="8" fill="#ea4335" stroke="#c62828" stroke-width="2"/>
+                <text x="440" y="110" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">贴吧详情页</text>
+                <text x="440" y="135" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">帖子列表</text>
+                <text x="440" y="155" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">发帖功能</text>
+                <text x="440" y="175" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">关注/取消关注</text>
+                
+                <!-- 帖子详情页 -->
+                <rect x="600" y="80" width="180" height="100" rx="8" fill="#fbbc05" stroke="#f57c00" stroke-width="2"/>
+                <text x="690" y="110" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">帖子详情页</text>
+                <text x="690" y="135" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">帖子内容展示</text>
+                <text x="690" y="155" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">评论列表</text>
+                <text x="690" y="175" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">回复功能</text>
+                
+                <!-- 交互流程连接线 -->
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+                    </marker>
+                </defs>
+                
+                <!-- 页面间导航 -->
+                <line x1="280" y1="130" x2="350" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="530" y1="130" x2="600" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+                
+                <!-- 返回导航 -->
+                <line x1="350" y1="150" x2="280" y2="150" stroke="#333" stroke-width="1.5" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+                <line x1="600" y1="150" x2="530" y2="150" stroke="#333" stroke-width="1.5" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+                
+                <!-- 功能交互节点 -->
+                <circle cx="190" cy="230" r="25" fill="#4285f4" stroke="#1a56db" stroke-width="2"/>
+                <text x="190" y="235" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">登录</text>
+                
+                <circle cx="440" cy="230" r="25" fill="#34a853" stroke="#1b5e20" stroke-width="2"/>
+                <text x="440" y="235" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">筛选</text>
+                
+                <circle cx="690" cy="230" r="25" fill="#ea4335" stroke="#c62828" stroke-width="2"/>
+                <text x="690" y="235" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">点赞</text>
+                
+                <!-- 连接到功能节点 -->
+                <line x1="190" y1="180" x2="190" y2="205" stroke="#333" stroke-width="1.5"/>
+                <line x1="440" y1="180" x2="440" y2="205" stroke="#333" stroke-width="1.5"/>
+                <line x1="690" y1="180" x2="690" y2="205" stroke="#333" stroke-width="1.5"/>
+                
+                <!-- 数据流向 -->
+                <line x1="190" y1="255" x2="190" y2="280" stroke="#333" stroke-width="1"/>
+                <line x1="440" y1="255" x2="440" y2="280" stroke="#333" stroke-width="1"/>
+                <line x1="690" y1="255" x2="690" y2="280" stroke="#333" stroke-width="1"/>
+                
+                <!-- 数据层 -->
+                <rect x="100" y="280" width="680" height="60" rx="8" fill="#673ab7" stroke="#4527a0" stroke-width="2"/>
+                <text x="440" y="315" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">数据请求与更新</text>
+                
+                <!-- 底部说明 -->
+                <text x="440" y="400" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">页面交互流程：用户可在三页面间无缝切换，实现完整的贴吧浏览与互动体验</text>
+            </svg>
+        </div>
+        
+        <div class="description">
+            <h3>页面功能详细说明</h3>
+            <ul>
+                <li><strong>首页</strong>：展示热门贴吧、提供搜索入口和个人中心入口，用户可以快速找到感兴趣的内容或进入个人空间。</li>
+                <li><strong>贴吧详情页</strong>：展示特定贴吧的帖子列表，提供发帖功能和关注/取消关注操作，让用户参与到特定话题的讨论中。</li>
+                <li><strong>帖子详情页</strong>：展示完整的帖子内容和评论列表，支持用户回复评论，促进社区成员间的交流互动。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="individual-files">
+        <h2>单独文件链接</h2>
+        <div class="description">
+            <p>您也可以通过以下链接访问单独的文档文件：</p>
+            <ul>
+                <li><a href="tieba_framework_diagram.html">框架思维导图</a></li>
+                <li><a href="tieba_core_features_diagram.html">核心功能图</a></li>
+                <li><a href="tieba_page_features_diagram.html">页面功能图</a></li>
+                <li><a href="test.html">测试页面</a></li>
+            </ul>
+            <p><strong>使用说明</strong>：由于服务器配置问题，您可以直接在文件资源管理器中双击这些HTML文件，它们将在您的默认浏览器中打开。所有SVG图表都已内嵌在HTML文件中，无需额外的服务器支持即可正常显示。</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>吴水保贴吧单页应用文档 - 2023</p>
+    </footer>
+</body>
+</html>
